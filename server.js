@@ -7,12 +7,12 @@ var app = express();
 // Assign the PORT to allow for Heroku' port of choice or (||) localhost usage at port 8080
 var PORT = process.env.PORT || 8080;
 
+// Allow Express to serve static directories (like stylesheets)
+app.use(express.static("public"));
+
 // Set up the Express app to handle data parsing (body-parser module)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Allow Express to serve static directories (like stylesheets)
-app.use(express.static("public"));
 
 // Set Express to use Handlebars engine to generate HTML layouts
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
