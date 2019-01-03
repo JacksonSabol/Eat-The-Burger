@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default col-sm-7">
+            <div class="page-header">
+                <h2>Your Burgers</h2>
+            </div>
+            <div class="row container-fluid panel-body">
+                <ul>
+                    {{#each burgers}}
+                    {{#unless this.devoured}}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <li>
+                                <div class="burger-name">{{this.burger_name}}</div>
+                                    <button class="btn" id="eat-the-burger" data-id="{{this.id}}">Eat The Burger!</button>
+                            </li>
+                        </div>
+                    </div>
+                    <hr>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <hr>
+            {{!-- add a burger --}}
+            <h3>Add a Burger</h3>
+            <div class="row container-fluid panel-body">
+                <form class="create-update-form" action="/" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="ca" name="name" placeholder="Beyond Burger" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Beyond Burger'">
+                    </div>
+                    <button class="btn submitbtn" type="submit">Add Burger</button>
+                </form>
+            </div>
+        </div>
+        {{!-- burgers eaten --}}
+        <div class="devoured panel panel-default col-sm-5">
+            <div class="page-header">
+                <h2>Burgers Devoured</h2>
+            </div>
+            <div class="row container-fluid panel-body">
+                <ul>
+                    {{#each burgers}}
+                    {{#if this.devoured}}
+                    <li>
+                        {{this.burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

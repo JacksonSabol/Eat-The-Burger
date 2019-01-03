@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Allow Express to serve static directories (like stylesheets)
-app.use(express.static("./public"));
+app.use(express.static("public"));
 
 // Set Express to use Handlebars engine to generate HTML layouts
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
