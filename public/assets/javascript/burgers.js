@@ -4,15 +4,13 @@ $(".eat-the-burger").on("click", function (event) {
     event.preventDefault();
     // Assign a variable to hold the id of the burger 'devoured'
     var burgerDevoured = $(this).data("id");
-    // Log for testing
-    console.log(burgerDevoured);
     // Send an AJAX PUT-request with jQuery
-    // $.ajax({
-    //     url: "/api/burgers/", burgerDevoured,
-    //     type: 'PUT'
-    //         // On success, run the following code
-    //         .then(function () {
-    //             console.log("Successfully Devoured!");
-    //         })
-    // });
+    $.ajax({
+        url: "/api/burgers/" + burgerDevoured + "",
+        type: 'PUT',
+        success: function (response) {
+            // Reload the page upon receiving a callback response to display devoured burger on the correct side
+            location.reload();
+        }
+    });
 });
