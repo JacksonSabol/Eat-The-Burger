@@ -1,10 +1,17 @@
 <div class="container">
-    <div class="row">
-        <div class="panel panel-default col-sm-7">
+    <div class="row logo">
+        <div class="col-sm-offset-3 col-sm-6 text-center">
+            <img src="https://amysdrivethru.com/addons/default/themes/amysdrivethru/img/amys-drive-thru.png" alt="Amy's Drive Thru">
+            <h1>Eat the Burger!</h1>
+        </div>
+    </div>
+    <br>
+    <div class="row middle-row">
+        <div class="panels col-sm-6">
             <div class="page-header">
-                <h2>Your Burgers</h2>
+                <h2>Your Burgers:</h2>
             </div>
-            <div class="row container-fluid panel-body">
+            <div class="container-fluid panel-body">
                 <ul>
                     {{#each burgers}}
                     {{#unless this.devoured}}
@@ -12,7 +19,7 @@
                         <div class="col-sm-12">
                             <li>
                                 <div class="burger-name">{{this.burger_name}}</div>
-                                    <button class="btn eat-the-burger" data-id="{{this.id}}">Eat The Burger!</button>
+                                <button class="btn eat-the-burger" data-id="{{this.id}}">Eat The Burger!</button>
                             </li>
                         </div>
                     </div>
@@ -21,29 +28,18 @@
                     {{/each}}
                 </ul>
             </div>
-            <hr>
-            {{!-- add a burger --}}
-            <h3>Add a Burger</h3>
-            <div class="row container-fluid panel-body">
-                <form class="create-update-form" action="/" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="ca" name="name" placeholder="Beyond Burger" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Beyond Burger'">
-                    </div>
-                    <button class="btn submitbtn" type="submit">Add Burger</button>
-                </form>
-            </div>
         </div>
         {{!-- burgers eaten --}}
-        <div class="devoured panel panel-default col-sm-5">
+        <div class="devoured panels col-sm-6">
             <div class="page-header">
-                <h2>Burgers Devoured</h2>
+                <h2>Burgers Devoured:</h2>
             </div>
-            <div class="row container-fluid panel-body">
+            <div class="container-fluid panel-body">
                 <ul>
                     {{#each burgers}}
                     {{#if this.devoured}}
                     <li>
-                        {{this.burger_name}}
+                        <div class="burger-name">{{this.burger_name}}</div>
                     </li>
                     {{/if}}
                     {{/each}}
@@ -51,4 +47,21 @@
             </div>
         </div>
     </div>
+</div>
+{{!-- add a burger --}}
+<div class="row">
+    <div class="add-burger-panel col-sm-offset-4 col-sm-4">
+        <div class="page-header">
+            <h3>Add a Burger:</h3>
+        </div>
+        <div class="container-fluid panel-body">
+            <form class="create-update-form" action="/" method="POST">
+                <div class="form-group">
+                    <input type="text" id="ca" name="name" placeholder="Beyond Burger" onfocus="this.placeholder = ''">
+                </div>
+                <button class="btn submitbtn" type="submit">Add Burger</button>
+            </form>
+        </div>
+    </div>
+</div>
 </div>

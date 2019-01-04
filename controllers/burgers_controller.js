@@ -34,8 +34,6 @@ router.put("/api/burgers/:id", function (req, res) {
     // When a PUT request is made to the root route (update a burger), invoke the updateOne function in burger.js
     // Pass the appropriate parameters: field 'devoured', boolean condition value of true (1 in MySQL), 'id' of row (burger) to be updated, and callback function
     burger.updateOne("devoured", 1, req.params.id, function (data) {
-        // Since the ORM updates the burger object to the database, redirecting to the root route will trigger the selectAll function and display the updated burger appropriately
-        // res.redirect("/");
         // Return the JSON data from updating the SQL database record
         res.json(data);
     });
