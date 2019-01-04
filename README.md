@@ -1,6 +1,6 @@
-# :hamburger: Welcome to Amy's© Drive Thru! :hamburger:
+# :hamburger: :fries: Welcome to Amy's© Drive Thru! :fries: :hamburger:
 
-## :fries: Where the Wildest Burger is Your Desire! :fries:
+## ~ Where the Wildest Burger is Your Desire! ~
 
 ### The following project is a burger eating application based (loosely) on Amy's© in Petaluma, CA
 
